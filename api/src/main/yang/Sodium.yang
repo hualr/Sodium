@@ -6,4 +6,16 @@ module Sodium {
     revision "2018-05-17" { // TODO change revision to date of model creation
         description "Initial revision of Sodium model";
     }
+    rpc hello-world {
+            input {
+                leaf name {
+                    type string;
+                }
+            }
+            output {
+                leaf greeting {
+                    type string;
+                }
+            }
+     }
 }

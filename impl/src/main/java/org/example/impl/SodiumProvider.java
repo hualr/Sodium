@@ -8,24 +8,36 @@
 package org.example.impl;
 
 import org.opendaylight.controller.md.sal.binding.api.DataBroker;
+import org.opendaylight.mdsal.binding.api.RpcProviderService;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.sodium.rev180517.SodiumService;
+import org.opendaylight.yangtools.concepts.ObjectRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SodiumProvider {
 
     private static final Logger LOG = LoggerFactory.getLogger(SodiumProvider.class);
-
     private final DataBroker dataBroker;
+    //private ObjectRegistration<SodiumService> sodiumServiceObjectRegistration;
+    //private RpcProviderService rpcProviderService;
 
     public SodiumProvider(final DataBroker dataBroker) {
         this.dataBroker = dataBroker;
     }
 
+   /* public SodiumProvider(final DataBroker dataBroker,
+                            final RpcProviderService rpcProviderService) {
+        this.dataBroker = dataBroker;
+        this.rpcProviderService=rpcProviderService;
+    }*/
+
     /**
      * Method called when the blueprint container is created.
      */
     public void init() {
-        LOG.info("SodiumProvider Session Initiated");
+        LOG.info("SodiumProvider Session Initiated zongqi");
+        //sodiumServiceObjectRegistration=rpcProviderService.
+        // registerRpcImplementation(SodiumService.class,new SodiumProviderImpl());
     }
 
     /**
