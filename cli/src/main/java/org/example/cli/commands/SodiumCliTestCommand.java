@@ -49,6 +49,7 @@ public class SodiumCliTestCommand extends AbstractAction {
          * Below is just an example.
          */
         final String testMessage = (String) service.testCommand(testArgument);
+        LOG.info("zq-hello karaf cmd");
         return testMessage;
     }
 }

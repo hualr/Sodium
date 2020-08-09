@@ -20,24 +20,21 @@ public class SodiumProvider {
     private final DataBroker dataBroker;
     //private ObjectRegistration<SodiumService> sodiumServiceObjectRegistration;
     //private RpcProviderService rpcProviderService;
+    private ObjectRegistration<SodiumService> sodiumService;
+    private RpcProviderService rpcProviderService;
 
-    public SodiumProvider(final DataBroker dataBroker) {
+    public SodiumProvider(final DataBroker dataBroker, final RpcProviderService rpcProviderService) {
         this.dataBroker = dataBroker;
+        this.rpcProviderService = rpcProviderService;
     }
-
-   /* public SodiumProvider(final DataBroker dataBroker,
-                            final RpcProviderService rpcProviderService) {
-        this.dataBroker = dataBroker;
-        this.rpcProviderService=rpcProviderService;
-    }*/
 
     /**
      * Method called when the blueprint container is created.
      */
     public void init() {
-        LOG.info("SodiumProvider Session Initiated zongqi");
-        //sodiumServiceObjectRegistration=rpcProviderService.
-        // registerRpcImplementation(SodiumService.class,new SodiumProviderImpl());
+        LOG.info("HelloProvider Session Initiated");
+        sodiumService = rpcProviderService.
+                registerRpcImplementation(SodiumService.class, new SodiumProviderImpl());
     }
 
     /**
@@ -46,4 +43,6 @@ public class SodiumProvider {
     public void close() {
         LOG.info("SodiumProvider Closed");
     }
+
+
 }

@@ -15,13 +15,14 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     interface="org.opendaylight.controller.md.sal.binding.api.DataBroker"
     odl:type="default" />
 
-  <reference id="rpcRegistry"
-             interface="org.opendaylight.controller.sal.binding.api.RpcProviderRegistry"/>
+  <reference id="rpcProviderService"
+             interface="org.opendaylight.mdsal.binding.api.RpcProviderService"/>
 
   <bean id="provider"
     class="org.example.impl.SodiumProvider"
     init-method="init" destroy-method="close">
     <argument ref="dataBroker" />
+    <argument ref="rpcProviderService"/>
   </bean>
 
 
