@@ -8,6 +8,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!--所有的odl的pom都需要此父类-->
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
@@ -21,22 +22,26 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
   <name>Sodium</name> <!-- DO NOT CHANGE - Used by Sonar to set project name -->
   <packaging>pom</packaging>
 
-  <scm>
+  <!--我认为对个人开发没意义,因此直接注释掉了-->
+<!--  <scm>
     <connection>scm:git:ssh://git.opendaylight.org:29418/Sodium.git</connection>
     <developerConnection>scm:git:ssh://git.opendaylight.org:29418/Sodium.git</developerConnection>
     <tag>HEAD</tag>
     <url>https://wiki.opendaylight.org/view/Sodium:Main</url>
-  </scm>
+  </scm>-->
 
   <modules>
+    <!--之后我会尝试将api和impl合并在一起-->
     <module>api</module>
     <module>impl</module>
     <module>features</module>
     <module>artifacts</module>
     <module>cli</module>
+    <!--我甚至不太清楚it集成测试的意义是什么-->
     <module>it</module>
   </modules>
 
+  <!--其实我不太理解这个属性的意义何在,默认激活???-->
   <profiles>
     <profile>
       <id>karaf</id>
@@ -50,7 +55,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
     </profile>
   </profiles>
 
-  <!-- DO NOT install or deploy the repo root pom as it's only needed to initiate a build -->
+  <!-- 对于聚合的pom或者集成测试模块，我们一般是不需要发布该pom和模块的 -->
   <build>
     <plugins>
       <plugin>
