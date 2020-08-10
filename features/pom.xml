@@ -25,9 +25,9 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
 
   <modules>
     <module>features-Sodium</module>
-    <module>odl-Sodium-api</module>
-    <module>odl-Sodium</module>
     <module>odl-Sodium-rest</module>
-    <module>odl-Sodium-cli</module>
+    <module>odl-Sodium-helloworld</module>
+
+
   </modules>
 </project>

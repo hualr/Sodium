@@ -12,11 +12,11 @@
     </parent>
 
     <groupId>org.example</groupId>
-    <artifactId>odl-Sodium-cli</artifactId>
+    <artifactId>odl-Sodium-helloworld-impl</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Sodium :: CLI [Karaf Feature]</name>
+    <name>OpenDaylight :: Sodium :: Impl [Karaf Feature]</name>
 
     <dependencyManagement>
         <dependencies>
@@ -32,15 +32,21 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.opendaylight.controller</groupId>
+            <artifactId>odl-mdsal-broker</artifactId>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-Sodium</artifactId>
+            <artifactId>odl-Sodium-api</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>Sodium-cli</artifactId>
+            <artifactId>Sodium-impl</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

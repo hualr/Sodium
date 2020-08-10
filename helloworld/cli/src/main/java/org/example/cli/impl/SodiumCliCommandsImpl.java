@@ -24,6 +24,6 @@ public class SodiumCliCommandsImpl implements SodiumCliCommands {
 
     @Override
     public Object testCommand(Object testArgument) {
-        return "This is a test implementation of test-command";
+        return "This is a test implementation of test-command"+testArgument.toString();
     }
 }

@@ -12,17 +12,17 @@
     </parent>
 
     <groupId>org.example</groupId>
-    <artifactId>odl-Sodium</artifactId>
+    <artifactId>odl-Sodium-helloworld-rest</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Sodium :: Impl [Karaf Feature]</name>
+    <name>OpenDaylight :: Sodium :: REST [Karaf Feature]</name>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.opendaylight.controller</groupId>
-                <artifactId>mdsal-artifacts</artifactId>
+                <groupId>org.opendaylight.netconf</groupId>
+                <artifactId>restconf-artifacts</artifactId>
                 <version>1.10.2</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -32,22 +32,17 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.opendaylight.controller</groupId>
-            <artifactId>odl-mdsal-broker</artifactId>
+            <groupId>org.opendaylight.netconf</groupId>
+            <artifactId>odl-restconf</artifactId>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-Sodium-api</artifactId>
+            <artifactId>odl-Sodium-cli</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>Sodium-impl</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

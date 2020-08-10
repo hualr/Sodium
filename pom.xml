@@ -13,7 +13,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
     <version>5.0.5</version>
-    <relativePath/>
+    <!--<relativePath/>-->
   </parent>
 
   <groupId>org.example</groupId>
@@ -23,22 +23,21 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
   <packaging>pom</packaging>
 
   <!--我认为对个人开发没意义,因此直接注释掉了-->
-<!--  <scm>
+  <scm>
     <connection>scm:git:ssh://git.opendaylight.org:29418/Sodium.git</connection>
     <developerConnection>scm:git:ssh://git.opendaylight.org:29418/Sodium.git</developerConnection>
     <tag>HEAD</tag>
     <url>https://wiki.opendaylight.org/view/Sodium:Main</url>
-  </scm>-->
+  </scm>
 
   <modules>
     <!--之后我会尝试将api和impl合并在一起-->
-    <module>api</module>
-    <module>impl</module>
+
     <module>features</module>
     <module>artifacts</module>
-    <module>cli</module>
     <!--我甚至不太清楚it集成测试的意义是什么-->
     <module>it</module>
+    <module>helloworld</module>
   </modules>
 
   <!--其实我不太理解这个属性的意义何在,默认激活???-->
